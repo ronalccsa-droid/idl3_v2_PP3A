@@ -21,12 +21,7 @@ streamlit run app.py
 
 Se abre en `http://localhost:8501`. No necesita GPU ni conexión a internet.
 
-## Publicarlo gratis (Streamlit Community Cloud)
 
-1. Suba **todo el contenido** de esta carpeta a un repositorio de GitHub. En la raíz del repositorio deben verse
-   `app.py`, `requirements.txt` y las carpetas `motor_costos/`, `data/` y `.streamlit/`.
-2. Entre a <https://share.streamlit.io>, elija *Create app* y seleccione el repositorio.
-3. En *Main file path* escriba `app.py` y pulse *Deploy*.
 
 ## Qué tiene el tablero
 
