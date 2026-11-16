@@ -7,7 +7,7 @@ import warnings
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent
-sys.path.insert(0, str(RAIZ / "src"))
+sys.path.insert(0, str(RAIZ))
 warnings.filterwarnings("ignore")
 
 import numpy as np
@@ -15,8 +15,16 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from mcp import contingencia as C, drift, economico as E, features, servicio as S
-from mcp.config import CONTINGENCIA_BASE, INICIO_TEST
+# Comprobación de instalación: avisa con claridad si al repositorio le falta algo
+_faltan = [r for r in ("motor_costos/servicio.py", "data/predicciones.csv", "data/metricas.csv", "data/series.csv")
+           if not (RAIZ / r).exists()]
+if _faltan:
+    st.error("Al repositorio le faltan archivos. Suba también estas rutas, junto a app.py:\n\n"
+             + "\n".join(f"- `{r}`" for r in _faltan))
+    st.stop()
+
+from motor_costos import contingencia as C, drift, economico as E, features, servicio as S
+from motor_costos.config import CONTINGENCIA_BASE, INICIO_TEST
 
 # ----------------------------------------------------------------------------------------------
 # Estilo

@@ -23,7 +23,8 @@ Se abre en `http://localhost:8501`. No necesita GPU ni conexión a internet.
 
 ## Publicarlo gratis (Streamlit Community Cloud)
 
-1. Suba esta carpeta a un repositorio de GitHub.
+1. Suba **todo el contenido** de esta carpeta a un repositorio de GitHub. En la raíz del repositorio deben verse
+   `app.py`, `requirements.txt` y las carpetas `motor_costos/`, `data/` y `.streamlit/`.
 2. Entre a <https://share.streamlit.io>, elija *Create app* y seleccione el repositorio.
 3. En *Main file path* escriba `app.py` y pulse *Deploy*.
 
@@ -48,7 +49,7 @@ Súbalo en la pestaña *Datos y método* y pulse *Recalcular con mis datos*. Se 
 
 ```
 app.py                     tablero (Streamlit)
-src/mcp/                   paquete del motor
+motor_costos/              paquete del motor
   datos.py                 carga, control de calidad y generador de costos simulados
   features.py              variables explicativas
   modelos.py               catálogo de modelos
